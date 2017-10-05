@@ -12,6 +12,7 @@
 		182D53CE1F85213300F63A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182D53CC1F85213300F63A55 /* Main.storyboard */; };
 		182D53D01F85213300F63A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182D53CF1F85213300F63A55 /* Assets.xcassets */; };
 		182D53D31F85213300F63A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182D53D11F85213300F63A55 /* LaunchScreen.storyboard */; };
+		18D13D2E1F862F5D00187040 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D13D2D1F862F5D00187040 /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		182D53CF1F85213300F63A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182D53D21F85213300F63A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182D53D41F85213300F63A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		182D53DA1F8523B500F63A55 /* SampleAPNS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleAPNS.entitlements; sourceTree = "<group>"; };
+		18D13D2D1F862F5D00187040 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D13D2E1F862F5D00187040 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				182D53C71F85213300F63A55 /* SampleAPNS */,
 				182D53C61F85213300F63A55 /* Products */,
+				18D13D2C1F862F5D00187040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		182D53C71F85213300F63A55 /* SampleAPNS */ = {
 			isa = PBXGroup;
 			children = (
+				182D53DA1F8523B500F63A55 /* SampleAPNS.entitlements */,
 				182D53C81F85213300F63A55 /* AppDelegate.swift */,
 				182D53CA1F85213300F63A55 /* ViewController.swift */,
 				182D53CC1F85213300F63A55 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				182D53D41F85213300F63A55 /* Info.plist */,
 			);
 			path = SampleAPNS;
+			sourceTree = "<group>";
+		};
+		18D13D2C1F862F5D00187040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18D13D2D1F862F5D00187040 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +110,15 @@
 				TargetAttributes = {
 					182D53C41F85213300F63A55 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -192,7 +214,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naveen Saraswat (EV9477V9F3)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Naveen Saraswat (EV9477V9F3)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -211,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -249,7 +272,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -262,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -274,11 +297,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SampleAPNS/SampleAPNS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Naveen Saraswat (EV9477V9F3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_STYLE[sdk=*]" = Manual;
+				DEVELOPMENT_TEAM = WXUVRBQDNB;
+				"DEVELOPMENT_TEAM[sdk=*]" = WXUVRBQDNB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = SampleAPNS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sample.sodio.SampleAPNS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eb333e69-d7eb-4ddb-ada3-aa8042003025";
+				PROVISIONING_PROFILE_SPECIFIER = SampleAPNS_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,11 +323,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SampleAPNS/SampleAPNS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sodio Technologies private limited (WXUVRBQDNB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				INFOPLIST_FILE = SampleAPNS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sample.sodio.SampleAPNS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
